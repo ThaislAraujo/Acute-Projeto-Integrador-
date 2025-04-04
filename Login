@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:background="@drawable/backlogin2"
+   tools:context=".login">
+
+
+android:id="@+id/login"
+
+
+
+   <TextView
+
+
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/logintela"
+       android:text="login"
+       android:textColor="@color/white"
+       android:textSize="35dp"
+       android:textStyle="bold"
+       android:layout_margin="50dp"
+       android:gravity="center"/>
+
+
+
+
+   <EditText
+       android:id="@+id/username"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/logintela"
+       android:layout_alignParentEnd="true"
+       android:layout_marginTop="62dp"
+       android:layout_marginEnd="-11dp"
+       android:background="#30ffffff"
+       android:drawableLeft="@drawable/baseline_person_24"
+       android:drawablePadding="20dp"
+       android:hint="Username"
+       android:padding="20dp"
+       android:textColor="@color/white"
+       android:textColorHint="@color/white" />
+
+
+
+   <EditText
+       android:id="@+id/userpassword"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/logintela"
+       android:layout_alignParentEnd="true"
+       android:layout_marginTop="206dp"
+       android:layout_marginEnd="-3dp"
+       android:background="#30ffffff"
+       android:drawableLeft="@drawable/baseline_person_24"
+       android:drawablePadding="20dp"
+       android:hint="senha"
+       android:padding="20dp"
+       android:textColor="@color/white"
+       android:textColorHint="@color/white" />
+
+
+   <Button
+       android:id="@+id/loginbtn"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentEnd="true"
+       android:layout_alignParentBottom="true"
+       android:layout_marginEnd="172dp"
+       android:layout_marginBottom="284dp"
+       android:text="login" />
+
+
+
+   <TextView
+       android:layout_width="387dp"
+       android:layout_height="wrap_content"
+       android:layout_alignBottom="@+id/loginbtn"
+       android:layout_alignParentEnd="true"
+       android:layout_marginTop="25dp"
+       android:layout_marginEnd="3dp"
+       android:layout_marginBottom="-58dp"
+       android:gravity="center"
+       android:text="Não sou cadastrado"
+       android:textSize="25dp" />
+
+
+   <Button
+       android:id="@+id/btLOGCadastre"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignBottom="@+id/loginbtn"
+       android:layout_marginLeft="50dp"
+       android:layout_marginTop="25dp"
+       android:layout_marginRight="50dp"
+       android:layout_marginBottom="-116dp"
+       android:text="Cadastre-se"
+       android:textSize="25dp" />
+
+
+   <LinearLayout
+       android:id="@+id/socialicons"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentEnd="true"
+       android:layout_alignParentBottom="true"
+       android:layout_marginEnd="0dp"
+       android:layout_marginBottom="73dp"
+       android:gravity="center">
+
+
+       <ImageView
+           android:layout_width="48dp"
+           android:layout_height="48dp"
+           android:layout_margin="20dp"
+           android:src="@drawable/google" />
+
+
+       <ImageView
+           android:layout_width="48dp"
+           android:layout_height="48dp"
+           android:layout_margin="20dp"
+           android:src="@drawable/fb" />
+
+
+       <ImageView
+           android:layout_width="48dp"
+           android:layout_height="48dp"
+           android:layout_margin="20dp"
+           android:src="@drawable/twitter" />
+
+
+
+
+   </LinearLayout>
+
+
+
+
+</RelativeLayout>
