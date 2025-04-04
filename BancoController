@@ -1,0 +1,73 @@
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
+public class BancoContoller {
+   public class BancoController {
+       private SQLiteDatabase db;
+       private database banco;
+
+       public BancoController(Context context) {
+           banco = new database(context);
+       }
+
+       // rotina para incluir um novo usuário (tela de Cadastre)
+       public String gravaUsuario(String _Nome, String _Email, String _Cpf, String _Senha) {
+           ContentValues valores;
+           long resultado;
+           db = banco.getWritableDatabase();
+           valores = new ContentValues();
+           valores.put("nome", _Nome);
+           valores.put("email", _Email);
+           valores.put("cpf", _Cpf);
+           valores.put("senha", _Senha);
+
+           resultado = db.insert("usuarios", null, valores);
+           db.close();
+
+           if (resultado == -1)
+               return "Erro ao tentar efetuar o Cadastre_se";
+           else
+               return "Cadastro efetuado com sucesso";
+       }
+
+
+       // função para gravar a denúncia
+       public String inseredenuncia(String _data, String _hora, String _email) {
+           ContentValues valores;
+           long resultado;
+           db = banco.getWritableDatabase();
+           valores = new ContentValues();
+           valores.put("data", _data);
+           valores.put("hora", _hora);
+           valores.put("email", _email);
+
+           resultado = db.insert("agendamento", null, valores);
+           db.close();
+
+
+           if (resultado == -1)
+               return "Erro ao gravar o denuncia";
+           else
+               return "denucia efetuado com sucesso";
+       }
+
+
+       // funcao para verificar se usuário e senha existem (tela de Login)
+       // select idUsuario, nome, email, cpf, senha from usuarios where email = 'aaa@aaa.com.br' and senha = '123@123'
+       public Cursor ProcuraDadosLogin(String _email, String _senha) {
+           Cursor cursor;
+           String[] campos = {"idUsuario", "nome", "email", "cpf", "senha"};
+           String where = "email = '" + _email + "' and senha = '" + _senha + "'";
+           db = banco.getReadableDatabase();
+           cursor = db.query("usuarios", campos, where, null, null, null,
+                   null, null);
+           if (cursor != null) {
+               cursor.moveToFirst();
+           }
+           db.close();
+           return cursor;
+       }
+
+   }
